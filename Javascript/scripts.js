@@ -21,9 +21,12 @@
 		}
 	}
 	
+	function gotoLink(l){
+		window.location = l;
+	}
 
 	function download() {
-		ReImg.fromCanvas(get("Canvas0")).downloadPng();
+		ReImg.fromCanvas(get("Canvas0")).downloadPng("Spell Sheet");
 	}
 	
 	
