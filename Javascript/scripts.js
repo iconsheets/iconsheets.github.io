@@ -8,7 +8,10 @@
 		get("AddedSpells").appendChild(option);
 		get("Input").value = "";}
 	
-	function resetSpells(){removeAllChildren(get("AddedSpells"));}
+	function resetSpells(){
+		removeAllChildren(get("AddedSpells"));
+		location.reload();
+		}
 	
 	function removeSpell(){
 		get("AddedSpells").removeChild(getSelectedOption("AddedSpells"));
