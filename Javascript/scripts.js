@@ -10,8 +10,10 @@
 	
 	function resetSpells(){
 		removeAllChildren(get("AddedSpells"));
-		location.reload();
+		if(QueuedSpells.length > 0){
+			location.reload();
 		}
+	}
 	
 	function removeSpell(){
 		get("AddedSpells").removeChild(getSelectedOption("AddedSpells"));
