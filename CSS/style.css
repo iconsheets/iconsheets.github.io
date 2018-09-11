@@ -10,8 +10,10 @@
 	}
 	canvas{
 		display: block;
-		border: solid black 5px;
+		border: solid black 1px;
 		margin: auto;
+		width: 80%;
+		margin-top: 20px;
 	}
 	#InputWrapper{
 		width: 300px;
