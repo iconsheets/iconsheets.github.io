@@ -39,7 +39,7 @@
 		font				: "40px IskoolaPota",
 		lineHeight			: 40,
 		backgroundColor		: "#FFFFFF",
-		strokeColor			: "#444040",
+		strokeColor			: "#222020",
 		titleFont			: "45px IskoolaPota",
 		canvasID			: "Canvas",
 		getCanvas			: function(){return get(Constants.canvasID);}
@@ -91,13 +91,14 @@
 		this.height = 400;	if(this.spellBox.height > this.height) this.height = this.spellBox.height;
 		
 		this.draw = function(){// - Constants.columnPaddingMiddle - Constants.columnPaddingSide
+			Constants.getCanvas().getContext("2d").lineWidth = 2;
 			drawRoundRect(Constants.getCanvas(), x, y, Constants.columnWidth, this.height, 15, Constants.backgroundColor, Constants.strokeColor);
 			drawImageOnCanvas(this.spell.iconPath, x + Constants.iconPaddingSide, y + Constants.iconPaddingTop, Constants.getCanvas(), Constants.iconWidth, Constants.iconWidth);
 			this.spellBox.draw();
 			var currentCanvas = Constants.getCanvas();
 			setTimeout(function(){
-				currentCanvas.getContext("2d").lineWidth = 3;
-				drawRoundRect(currentCanvas, x + Constants.iconPaddingSide, y + Constants.iconPaddingTop, Constants.iconWidth, Constants.iconWidth, 5, null, "#666666");
+				currentCanvas.getContext("2d").lineWidth = 2;
+				drawRoundRect(currentCanvas, x + Constants.iconPaddingSide, y + Constants.iconPaddingTop, Constants.iconWidth, Constants.iconWidth, 5, null, "#222020");
 				currentCanvas.getContext("2d").lineWidth = 1;},1000);}}
 	
 	var canvasCounter = 0;

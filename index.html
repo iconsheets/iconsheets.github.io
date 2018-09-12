@@ -4,7 +4,6 @@
 	<meta charset="UTF-8">
 	<title>5e Icon Sheets</title>
 	<script src = "Javascript/utils.js"></script>
-	<script src = "Javascript/Queue.src.js"></script>
 	<script src = "Javascript/jquery-3.3.1.min.js"></script>
 	<script src = "Javascript/canvas.js"></script>
 	<script src = "Javascript/SpellObjectDatabase.js"></script>
@@ -17,14 +16,14 @@
 <div id = "Window">
 <nav id = "Navigation">
 	<div class = "NavigationButton" onclick = "gotoLink('https://iconsheets.github.io/')"><a href = "#">5e Icon Sheets</a></div>
-	<div class = "NavigationButton" onclick = "gotoLink('https://github.com/iconsheets/iconsheets.github.io/tree/master/Images')"><a href = "#">Source Code</a></div>
+	<div class = "NavigationButton" onclick = "gotoLink('https://github.com/iconsheets/iconsheets.github.io/tree/master')"><a href = "#">Source Code</a></div>
 	<div class = "NavigationButton" style = "cursor: not-allowed"><a style = "color: #999999; cursor: not-allowed" href = "#">Credits and Thanks</a></div>
 	<div style = "cursor: not-allowed" class = "NavigationButton"><a style = "color: #999999; cursor: not-allowed" href = "#">Explore Spells</a></div>
 </nav>
 	<div id = "InputWrapper">
 		<div class="autocomplete" style="width:300px;">
 			<input id="Input" type="text"  placeholder="Search your spell here...">
-			<button id = "AddSpell" onclick = "queueSpell()">Add</button>
+			<button class = "Button" id = "AddSpell" onclick = "queueSpell()">Add</button>
 		</div>
 	</div>
 	<div id = "AddedSpellsWrapper">
@@ -33,12 +32,12 @@
 		</select>
 	</div>
 	<div id = "ButtonsWrapper">
-		<button id = "Reset" onclick = "resetSpells()" title = "Click here to reset everything.">Reset</button>
-		<button id = "RemoveSpell" onclick = "removeSpell()" title = "Click here to remove the selected spell">Remove Spell</button>
+		<button class = "Button" id = "Reset" onclick = "resetSpells()" title = "Click here to reset everything.">Reset</button>
+		<button class = "Button" id = "RemoveSpell" onclick = "removeSpell()" title = "Click here to remove the selected spell">Remove Spell</button>
 	</div>
 	<div id = "GenerateDownloadWrapper">
-		<button id = "Generate" onclick = "generate()" title = "When you are done adding spells, click Generate! to get your awesome spell sheets!">Generate!</button>
-		<button id = "Download" onclick = "download()" title = "You need to generate the spell sheets first!">Download</button>
+		<button class = "Button" id = "Generate" onclick = "generate()" title = "When you are done adding spells, click Generate! to get your awesome spell sheets!">Generate!</button>
+		<button class = "Button" id = "Download" onclick = "download()" title = "You need to generate the spell sheets first!">Download</button>
 	</div>
 	<div id = "CanvasWrapper">
 	</div>

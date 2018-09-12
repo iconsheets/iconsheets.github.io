@@ -9,6 +9,7 @@ ReImg = {
         var downloadImage = function(data, filename) {
             var a = document.createElement('a');
             a.href = data;
+			a.name = "Spell Sheet";
             a.download = filename;
             document.body.appendChild(a);
             a.click();

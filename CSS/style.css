@@ -41,6 +41,7 @@
 		height: 50px;
 		margin: auto;
 		margin-top: 15px;
+		margin-bottom: -5px;
 	}
 	#Reset{
 		width: 33%;
@@ -52,6 +53,7 @@
 	}
 	#GenerateDownloadWrapper{
 		width: 300px;
+		margin-top: 0px;
 		margin: auto;
 	}
 	#Generate{
@@ -103,16 +105,38 @@
 	  font-size: 16px;
 	  width: 80%;
 	  display: inline-block;}
-	button{
+	.Button{
 		border: 1px solid transparent;
 		background-color: #FFcc88;
 		padding: 10px;
 		font-size: 16px;
 		display: inline-block;}
-	button:hover{
+	.Button:hover{
 		background-color: #FFDD99;
 		cursor: pointer;
 	}
+	.Flashed1{
+		border: 1px solid transparent;
+		padding: 10px;
+		font-size: 16px;
+		display: inline-block;
+		background-color: #FF7777;
+		cursor: pointer;
+		-webkit-transition: background-color 0.25s ease-out;
+		-moz-transition: background-color 0.25s ease-out;
+		-o-transition: background-color 0.25s ease-out;
+		transition: background-color 0.25s ease-out;}
+	.Flashed2{
+		border: 1px solid transparent;
+		padding: 10px;
+		font-size: 16px;
+		display: inline-block;
+		background-color: #FFcc88;
+		cursor: pointer;
+		-webkit-transition: background-color 0.25s ease-out;
+		-moz-transition: background-color 0.25s ease-out;
+		-o-transition: background-color 0.25s ease-out;
+		transition: background-color 0.25s ease-out;}
 	#AddSpell{
 		width: 18%;
 	}
