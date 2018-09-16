@@ -50,20 +50,25 @@
 	}
 	
 	function downloadAllCanvases(){
+		console.log("Downloading...");
 		var zip = new JSZip();
-		var img = get("Canvas0").toDataURL("image/png");
-		print(img);
-		zip.file("Download.png", img, {base64: true});
-		print(zip);
-		zip.generateAsync({type : "blob"}).then(function(content){
-			
-			saveAs(content, "Download.zip");
+		for(var i = 0; i<CanvasManager.canvases.length; i++){
+			let data = CanvasManager.canvases[i].canvas.toDataURL("image/png; base64");
+			data = data.replace(/^data:image\/(png|jpg);base64,/, "");
+			zip.file("Page" + i + ".png", data, {base64: true});}
+		zip.generateAsync({type:"blob"})
+		.then(function(content) {
+			// see FileSaver.js
+			saveAs(content, "example.zip");
 		});
 	}
 	
 	function downloadPng(){
+		//console.log("Downloading");
 		var data = get("Canvas0").toDataURL("image/png; base64");
+		//console.log(data);
 		data = data.replace(/^data:image\/(png|jpg);base64,/, "");
+		//console.log(data);
 		var zip = new JSZip();
 		zip.file("Hello.txt", "Hello World\n");
 		zip.file("Panda.png", data, {base64: true});
@@ -74,6 +79,7 @@
 			// see FileSaver.js
 			saveAs(content, "example.zip");
 		});
+		//console.log(data);
 		return;
 		
 		
@@ -108,8 +114,8 @@
 
 	function download() {
 		// ReImg.fromCanvas(get("Canvas0")).downloadPng("Spell Sheet");
-		//downloadAllCanvases();
-		downloadPng();
+		downloadAllCanvases();
+		//downloadPng();
 	}
 	
 	
