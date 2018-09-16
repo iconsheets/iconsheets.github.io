@@ -63,6 +63,7 @@
 	
 	function downloadPng(){
 		var data = get("Canvas0").toDataURL("image/png; base64");
+		data = data.replace(/^data:image\/(png|jpg);base64,/, "");
 		var zip = new JSZip();
 		zip.file("Hello.txt", "Hello World\n");
 		zip.file("Panda.png", data, {base64: true});
