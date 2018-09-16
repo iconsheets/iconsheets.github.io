@@ -64,6 +64,21 @@
 	function downloadPng(){
 		var data = get("Canvas0").toDataURL("image/png; base64");
 		var zip = new JSZip();
+		zip.file("Hello.txt", "Hello World\n");
+		zip.file("Panda.png", data, {base64: true});
+		//var img = zip.folder("images");
+		//img.file("smile.gif", imgData, {base64: true});
+		zip.generateAsync({type:"blob"})
+		.then(function(content) {
+			// see FileSaver.js
+			saveAs(content, "example.zip");
+		});
+		return;
+		
+		
+		
+		var data = get("Canvas0").toDataURL("image/png; base64");
+		var zip = new JSZip();
 		console.log("Saving");
 		zip.file("Download.png", data, {type: "blob"})
 		.then(function(content){
