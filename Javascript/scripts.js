@@ -62,6 +62,17 @@
 	}
 	
 	function downloadPng(){
+		var data = get("Canvas0").toDataURL("image/png; base64");
+		var zip = new JSZip();
+		console.log("Saving");
+		zip.file("Download.png", data, {type: "blob"})
+		.then(function(content){
+			saveAs(content, "example.zip");
+		});
+		console.log("saved?");
+		return;
+		
+		
 		var a = document.createElement('a');
 		var data = get("Canvas0").toDataURL("image/png; base64");
 		var img = createElement("img");
